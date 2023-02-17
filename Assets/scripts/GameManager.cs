@@ -6,15 +6,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-
 // NOTES SUR LE RENDU UNITY 
 /* Augmenter distance entre caractère sur le rendu de "mot" => Spacing options dans TMP Text UI */
 
 
-
 public class GameManager : MonoBehaviour
 {
-
     // VARIABLES DE CLASSE
 
     //Champs affichés en jeu
@@ -25,6 +22,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI affichageErreur;
     public TextMeshProUGUI gameOver;
     public Image imgPendu;
+
     //Lettre entrée (à tester) par le joueur
     public TMP_InputField input;
 
@@ -41,7 +39,7 @@ public class GameManager : MonoBehaviour
     public GameObject ecranFin;
 
     //Dictionnaire des mots
-    [SerializeField] private List<string> listeDictionnaire = new List<string>(); /* [SerializeField] private permet à une variable privée d'être qd mm affichée dans l'inspector */
+    private List<string> listeDictionnaire = new List<string>();
 
     public DownloadText motDL;
     
@@ -50,13 +48,9 @@ public class GameManager : MonoBehaviour
         affichagePhase(true, false, false, false);
     }
 
-
-
     void Update()
     {
     }
-
-
 
 
     public void affichagePhase(bool demarrage, bool fin, bool jeu, bool image)
@@ -80,7 +74,6 @@ public class GameManager : MonoBehaviour
             phaseJeu.SetActive(false);
             ecranFin.SetActive(true);
         }
-
     }
 
     public void affichageLettre()
@@ -120,8 +113,6 @@ public class GameManager : MonoBehaviour
         {
             affichageErreur.text = "Lettre déjà essayée !!";
         }
-
-
     }
 
     public void motRandom()
@@ -151,7 +142,6 @@ public class GameManager : MonoBehaviour
 
         if (input.text == "") { }
             //on vérifie si l'user utilise un caractère spécial
-
             if (input.text != "")
             {
                 if (mot.text.Contains(input.text))
@@ -168,7 +158,6 @@ public class GameManager : MonoBehaviour
                     affichage.text = "Bien essayé ! Retentez votre chance !";          
                     ajouteLettre("red");
 
-
                     /*si image du pendu complète alors game over*/
                     if (iterateurErreur == 8)
                     {
@@ -177,18 +166,12 @@ public class GameManager : MonoBehaviour
                         phaseJeu.SetActive(false);
                         ecranFin.SetActive(true);
                     }
-
                 }
-                
-
             }
             else
             {
                 affichageErreur.text = "Attention n'utilisez pas de caractères spéciaux !";
              }
-            
-        
-
     }
 
     private void bouttonResetJeu()

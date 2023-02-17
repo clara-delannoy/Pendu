@@ -22,9 +22,6 @@ public class DownloadText : MonoBehaviour
         public string regles;
     }
 
-
-
-
     private void Start()
     {
         StartCoroutine(GetText());
@@ -34,8 +31,6 @@ public class DownloadText : MonoBehaviour
     {
         return mot.motChoisi;
     }
-
-
 
     private IEnumerator GetText()
     {
