@@ -21,17 +21,19 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI mot;
     public TextMeshProUGUI renduMot;
     public TextMeshProUGUI affichage;
-    public TextMeshProUGUI lettreEssayées;
-    public TextMeshProUGUI lettreDéjàEssayée;
+    public TextMeshProUGUI lettreEssayees;
+    public TextMeshProUGUI affichageErreur;
     public TextMeshProUGUI gameOver;
     public Image imgPendu;
     //Lettre entrée (à tester) par le joueur
     public TMP_InputField input;
 
     //Liste des images du pendu
-    public List<Sprite> tableauImage = new List<Sprite>();
+    public List<Sprite> tableauImageMoches = new List<Sprite>();
+    public List<Sprite> tableauForet = new List<Sprite>();
+
     //Numéro de l'image du pendu affichée selon les erreurs
-    public int itérateurErreur = 0;
+    public int iterateurErreur = 0;
 
     //Phases de jeu
     public GameObject ecranDemarrage;
@@ -47,6 +49,14 @@ public class GameManager : MonoBehaviour
     {
         affichagePhase(true, false, false, false);
     }
+
+
+
+    void Update()
+    {
+    }
+
+
 
 
     public void affichagePhase(bool demarrage, bool fin, bool jeu, bool image)
@@ -93,50 +103,30 @@ public class GameManager : MonoBehaviour
     public void ajouteLettre(string couleur)
     {
 
-        if (!lettreEssayées.text.Contains(input.text))
+        if (!lettreEssayees.text.Contains(input.text))
         {
-            lettreEssayées.text += "<color="+ couleur +">" + input.text + "</color> ";
-            lettreDéjàEssayée.text = "";
+            lettreEssayees.text += "<color="+ couleur +">" + input.text + "</color> ";
+            affichageErreur.text = "";
+            Debug.Log(couleur);
+            print(couleur);
             if (couleur == "red")
             {
-                itérateurErreur += 1;
-                Debug.Log(tableauImage[itérateurErreur]);
-                imgPendu.sprite = tableauImage[itérateurErreur];
+                iterateurErreur += 1;
+                Debug.Log(tableauForet[iterateurErreur]);
+                imgPendu.sprite = tableauForet[iterateurErreur];
             }
         }
         else
         {
-            lettreDéjàEssayée.text = "Lettre déjà essayée !!";
+            affichageErreur.text = "Lettre déjà essayée !!";
         }
 
 
     }
 
-    /* public void motRandom()
-    {
-        mot.text = "";
-        renduMot.text = "";
-        /* liste des mots du dictionnaire  ==================> appeler le dictionnaire de MYG voir image + lien api 
-        listeDictionnaire.Add("ABC");
-        listeDictionnaire.Add("DEF");
-        listeDictionnaire.Add("GHI");
-        listeDictionnaire.Add("XYZ");
-
-        /* génération d'un mot random à deviner 
-        mot.text = listeDictionnaire[Random.Range(0, listeDictionnaire.Count)];
-
-        /* mot anonymisé sous forme de "_" aka renduMot
-        do
-        {
-            renduMot.text += "_";
-        }
-        while (renduMot.text.Length != mot.text.Length);
-    } */
-
     public void motRandom()
     {
         mot.text = motDL.motChoisi().ToUpper();
-
         renduMot.text = "";
 
         // mot anonymisé sous forme de "_" aka renduMot
@@ -152,101 +142,58 @@ public class GameManager : MonoBehaviour
     {
         affichagePhase(false, false, true, true);
         motRandom();
+        imgPendu.sprite = tableauForet[0];
     }
 
     public void bouttonTester()
     {
         Debug.Log(input.text);
 
-        if (input.text != "")
-        {
-            if (mot.text.Contains(input.text))
+        if (input.text == "") { }
+            //on vérifie si l'user utilise un caractère spécial
+
+            if (input.text != "")
             {
-                Debug.Log("Oui le mot contient la lettre entrée.");
-                affichageLettre();
-                ajouteLettre("green");
-                motComplet();      
+                if (mot.text.Contains(input.text))
+                {
+                    Debug.Log("Oui le mot contient la lettre entrée.");
+                    affichageLettre();
+                    ajouteLettre("green");
+                    motComplet();
+                }
+                else
+                {
+                    Debug.Log("Non le mot ne contient pas la lettre entrée.");
+                    /*afficher un message type 'bien essayé'*/
+                    affichage.text = "Bien essayé ! Retentez votre chance !";          
+                    ajouteLettre("red");
+
+
+                    /*si image du pendu complète alors game over*/
+                    if (iterateurErreur == 8)
+                    {
+                        Debug.Log("Game over");
+                        gameOver.text = "Perdu !";
+                        phaseJeu.SetActive(false);
+                        ecranFin.SetActive(true);
+                    }
+
+                }
+                
 
             }
             else
             {
-                Debug.Log("Non le mot ne contient pas la lettre entrée.");
-                /*afficher un message type 'bien essayé'*/
-                affichage.text = "Bien essayé ! Retentez votre chance !";
-                ajouteLettre("red");
-   
-                /*si image du pendu complète alors game over*/
-                if (itérateurErreur == 6)
-                {
-                    Debug.Log("Game over");
-                    gameOver.text = "Perdu !";
-                    phaseJeu.SetActive(false);
-                    ecranFin.SetActive(true);    
-                }
-
-            }
-
-
+                affichageErreur.text = "Attention n'utilisez pas de caractères spéciaux !";
+             }
             
-        }
-
-    }
-
-    public void bouttonResetJeu()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    /*
-    public void test()
-    {
-        for (int i = 0; i >= 1; i++)
-        {
-
-        }
-
-
-        int i = 0; 
-
-
-
-        do
-        {
-
-        }
-        while (i == 0); //permet une exec obligatoire sans verif condition
-
-        while (i == 0) //si condition fausse alors non exec
-        {
-
-        }
-
-
-
-
-        List<int> liste = new List<int>();
-        liste.Add(1);
-
-        foreach (int j in liste)
-        {
-
-        }
-
-
-        int[] arrayDeInt = { 0, 1 };
-
-
-        DownloadText test = new DownloadText() ; //creation d'une instance locale 
-
-        Constructeur de classe (dans la classe DownloadText)
-        public DownloadText(string status, string motChoisi) 
-        {
-            this.mot.status = status;
-            this.mot.motChoisi = motChoisi;
-        }
         
-    }
-    */
 
+    }
+
+    private void bouttonResetJeu()
+        {
+            SceneManager.LoadScene(0);
+        }
 
 }

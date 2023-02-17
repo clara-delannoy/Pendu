@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cccf41147baf46940b950001e690e543
+guid: dec16a60c1202774f8aae9b0f09aafca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,169 +105,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pendu_0
+      name: sprites pendu_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 305
-        width: 200
-        height: 170
+        x: 0
+        y: 34
+        width: 224
+        height: 298
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67464c95c3ab2d840b344a621e2cae74
-      internalID: -1405815421
+      spriteID: f096aad6f6704a04abcd7de694bb7c80
+      internalID: 1565280647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pendu_1
+      name: sprites pendu_1
       rect:
         serializedVersion: 2
         x: 250
-        y: 305
-        width: 200
-        height: 170
-      alignment: 9
-      pivot: {x: 0.36292446, y: 0.5029011}
+        y: 34
+        width: 224
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5e8be7fefb469a4b96b51075b9dd719
-      internalID: 1531828555
+      spriteID: 45f76cf3f6ae3324aaa755b5d850d89c
+      internalID: -1120178356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pendu_2
+      name: sprites pendu_2
       rect:
         serializedVersion: 2
-        x: 460
-        y: 305
-        width: 200
-        height: 170
+        x: 500
+        y: 34
+        width: 224
+        height: 298
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fd803c0094d70c4089f776edbe16ff5
-      internalID: 670020393
+      spriteID: 9082f15304548d843b74d6ab29be6ba4
+      internalID: 1686752648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pendu_3
+      name: sprites pendu_3
       rect:
         serializedVersion: 2
-        x: 680
-        y: 305
-        width: 200
-        height: 170
+        x: 750
+        y: 34
+        width: 224
+        height: 298
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f72b52b413368724680656cb85477c26
-      internalID: -1709216780
+      spriteID: 89df98af114d8794a93642b12d530510
+      internalID: 235223825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pendu_4
+      name: sprites pendu_4
       rect:
         serializedVersion: 2
-        x: 40
-        y: 85
-        width: 200
-        height: 170
+        x: 1000
+        y: 34
+        width: 224
+        height: 298
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91501d2cff2e034e80b15f106a28278
-      internalID: -447817832
+      spriteID: 3e55df212fe7b2448b4d24b06b1b4967
+      internalID: 839066243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pendu_5
+      name: sprites pendu_5
       rect:
         serializedVersion: 2
-        x: 235
-        y: 85
-        width: 200
-        height: 170
+        x: 1250
+        y: 34
+        width: 224
+        height: 298
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 168247d195d7b4345acc57aae0386365
-      internalID: 1644618627
+      spriteID: fcc618ad0797dc1419ff5ea43cd960e1
+      internalID: 47359437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pendu_6
+      name: sprites pendu_6
       rect:
         serializedVersion: 2
-        x: 450
-        y: 85
-        width: 200
-        height: 170
+        x: 1500
+        y: 34
+        width: 224
+        height: 298
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3294b8748e9857d4591cd5f9f36b9b42
-      internalID: 1721996097
+      spriteID: a8a425918be45584e99bca0e607b0c6d
+      internalID: -1331216390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pendu_7
+      name: sprites pendu_7
       rect:
         serializedVersion: 2
-        x: 687
-        y: 95
-        width: 200
-        height: 170
+        x: 1750
+        y: 34
+        width: 224
+        height: 298
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32427a4e591d29d4cbf974cd068dc3a5
-      internalID: -797951618
+      spriteID: aadc3a3e9cbb1894fb7ee2203293b615
+      internalID: 1761659443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites pendu_8
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 34
+        width: 224
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2925bf42fbfb65e479bb12fc4bc67cdb
+      internalID: 948545978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites pendu_9
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 34
+        width: 224
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c58929880ab6a4aab9261d98c6083a
+      internalID: -1814058871
       vertices: []
       indices: 
       edges: []
@@ -283,14 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pendu_6: 1721996097
-      pendu_5: 1644618627
-      pendu_7: -797951618
-      pendu_1: 1531828555
-      pendu_4: -447817832
-      pendu_2: 670020393
-      pendu_3: -1709216780
-      pendu_0: -1405815421
+      sprites pendu_1: -1120178356
+      sprites pendu_0: 1565280647
+      sprites pendu_8: 948545978
+      sprites pendu_3: 235223825
+      sprites pendu_7: 1761659443
+      sprites pendu_4: 839066243
+      sprites pendu_2: 1686752648
+      sprites pendu_5: 47359437
+      sprites pendu_6: -1331216390
+      sprites pendu_9: -1814058871
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
